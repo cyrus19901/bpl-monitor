@@ -1,4 +1,4 @@
-# Ark Monitor
+# Bpl Monitor
 
 <img src="https://cloud.githubusercontent.com/assets/937766/23776676/798237d0-050e-11e7-8d25-fe345ceb07ca.png" width="200" />
 
@@ -6,7 +6,7 @@
 
 MIT License
 
-Copyright (c) 2016 Ark
+Copyright (c) 2016 Ark and 2017 Bpl
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
