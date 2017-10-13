@@ -9,14 +9,14 @@ class Block: NSObject {
     public var numberOfTransactions: Int64 = 0
     public var totalAmount: Int64 = 0
     public var totalFee: Int64 = 0
-    public var reward: Int64 = 0
+    public var reward: String = ""
     public var payloadLength: Int64 = 0
     public var payloadHash: String = ""
     public var generatorPublicKey: String = ""
     public var generatorId: String = ""
     public var blockSignature: String = ""
     public var confirmations: Int64 = 0
-    public var totalForged: Int64 = 0
+    public var totalForged: String = ""
     
     public static func fromArrayJson(blocksJsonArray: NSArray) -> [Block] {
         var blocks : [Block] = []
@@ -63,14 +63,13 @@ class Block: NSObject {
             block.totalFee = totalFee
         }
         
-        if let reward = objectJson.object(forKey: "reward") as? Int64 {
+        if let reward = objectJson.object(forKey: "reward") as? String {
             block.reward = reward
         }
-        
-        if let payloadLength = objectJson.object(forKey: "payloadLength") as? Int64 {
-            block.payloadLength = payloadLength
+
+        if let payloadHash = objectJson.object(forKey: "payloadHash") as? String {
+            block.payloadHash = payloadHash
         }
-        
         if let payloadHash = objectJson.object(forKey: "payloadLength") as? String {
             block.payloadHash = payloadHash
         }
@@ -90,11 +89,10 @@ class Block: NSObject {
         if let confirmations = objectJson.object(forKey: "confirmations") as? Int64 {
             block.confirmations = confirmations
         }
-        
-        if let totalForged = objectJson.object(forKey: "totalForged") as? Int64 {
+
+        if let totalForged = objectJson.object(forKey: "totalForged") as? String {
             block.totalForged = totalForged
         }
-
         return block
     }
 }

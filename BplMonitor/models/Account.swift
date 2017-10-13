@@ -3,7 +3,7 @@ import UIKit
 class Account: NSObject {
     public var address: String = ""
     public var publicKey : String = ""
-    public var username: String = ""
+    public var username: String = "-"
     public var balance : String = ""
 
     public static func fromArrayJson(accountsJsonArray: NSArray) -> [Account] {
@@ -26,11 +26,12 @@ class Account: NSObject {
         if let publicKey = objectJson.object(forKey: "publicKey") as? String {
             account.publicKey = publicKey
         }
-        if let balance = objectJson.object(forKey: "balance") as? String {
-            account.balance = balance
-        }
         if let username = objectJson.object(forKey: "username") as? String {
             account.username = username
+        }
+        
+        if let balance = objectJson.object(forKey: "balance") as? String {
+            account.balance = balance
         }
         return account
     }

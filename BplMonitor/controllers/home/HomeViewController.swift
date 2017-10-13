@@ -94,7 +94,7 @@ class HomeViewController: UIViewController {
 
     private func loadAccount() -> Void {
         if (self.account.address.length > 0) {
-//            self.totalBalanceLabel.text = String(Utils.convertToBplBase(value: self.account.balance))
+//            self.totalBalanceLabel.text = String(Utils.convertToBplBase(value: Int64(self.account.balance)!))
             self.balance = Double(self.account.balance)!
             self.calculateEquivalentInBitcoinUSDandEUR()
         }
@@ -117,11 +117,11 @@ class HomeViewController: UIViewController {
         }
     }
     
-    private func loadForging() -> Void {
-        self.feesLabel.text =  String(Utils.convertToBplBase(value: self.forging.fees))
-        self.rewardsLabel.text =  String(Utils.convertToBplBase(value: self.forging.rewards))
-        self.forgedLabel.text =  String(Utils.convertToBplBase(value: self.forging.forged))
-    }
+//    private func loadForging() -> Void {
+//        self.feesLabel.text =  String(Utils.convertToBplBase(value: Int64(self.forging.fees)!))
+//        self.rewardsLabel.text =  String(Utils.convertToBplBase(value: Int64(self.forging.rewards)!))
+//        self.forgedLabel.text =  String(Utils.convertToBplBase(value: Int64(self.forging.forged)!))
+//    }
     
     private func loadStatus() -> Void {
         self.totalBlocksLabel.text =  String(self.status.height)
@@ -180,15 +180,15 @@ class HomeViewController: UIViewController {
                 selfReference.loadDelegate()
             }
             
-            if let forging = object as? Forging {
-                selfReference.loadForging()
-                selfReference.forging = forging
-
-            }
+//            if let forging = object as? Forging {
+//                selfReference.forging = forging
+//                selfReference.loadForging()
+//
+//            }
             
             if let status = object as? Status {
-                selfReference.status = status
                 selfReference.loadStatus()
+                selfReference.status = status
             }
             
             if let peerVersion = object as? PeerVersion {

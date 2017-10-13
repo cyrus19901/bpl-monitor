@@ -10,14 +10,14 @@ enum Server: Int {
     var description: String {
         switch self {
         case .bplNet1 : return "node1.arknet.cloud"
-        case .bplNet2 :  return "54.183.132.15:4001"
+        case .bplNet2 :  return "54.183.132.15"
         case .custom : return "Add one"
         }
     }
     var apiUrl: String {
         switch self {
-        case .bplNet1: return "https://node1.arknet.cloud/api/"
-        case .bplNet2: return "http://13.56.163.57:4001/api/"
+        case .bplNet1: return "http://13.56.163.57:4001/api/"
+        case .bplNet2: return "http://54.183.132.15:4001/api/"
         case .custom : return ""
         }
     }
@@ -30,7 +30,7 @@ class Settings: NSObject {
     public var ipAddress: String = "";
     public var port: NSInteger = 0;
     public var sslEnabled: Bool = false
-    public var serverType: Server = Server.bplNet2
+    public var serverType: Server = Server.bplNet1
 
     public static let usernameAttr = "settings.username"
     public static let bplAddressAttr = "settings.bpl_address"
