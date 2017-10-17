@@ -117,11 +117,11 @@ class HomeViewController: UIViewController {
         }
     }
     
-//    private func loadForging() -> Void {
-//        self.feesLabel.text =  String(Utils.convertToBplBase(value: Int64(self.forging.fees)!))
-//        self.rewardsLabel.text =  String(Utils.convertToBplBase(value: Int64(self.forging.rewards)!))
-//        self.forgedLabel.text =  String(Utils.convertToBplBase(value: Int64(self.forging.forged)!))
-//    }
+    private func loadForging() -> Void {
+        self.feesLabel.text =  String(Utils.convertToBplBase(value: Int64(self.forging.fees)!))
+        self.rewardsLabel.text =  String(self.forging.rewards)
+        self.forgedLabel.text =  String(self.forging.forged)
+    }
     
     private func loadStatus() -> Void {
         self.totalBlocksLabel.text =  String(self.status.height)
@@ -180,11 +180,11 @@ class HomeViewController: UIViewController {
                 selfReference.loadDelegate()
             }
             
-//            if let forging = object as? Forging {
-//                selfReference.forging = forging
-//                selfReference.loadForging()
-//
-//            }
+            if let forging = object as? Forging {
+                selfReference.forging = forging
+                selfReference.loadForging()
+
+            }
             
             if let status = object as? Status {
                 selfReference.loadStatus()
