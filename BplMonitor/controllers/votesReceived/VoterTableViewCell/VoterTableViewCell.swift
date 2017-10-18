@@ -14,7 +14,7 @@ class VoterTableViewCell: BaseTableViewCell {
         if let data = data as? Account {
             self.usernameLabel.text = data.username
             self.addressLabel.text = data.address
-            self.balanceLabel.text = String(Utils.convertToBplBase(value: Int64(data.balance)!))
+            self.balanceLabel.text = String(Double(data.balance)! * pow(10, -8))
         }
     }
     

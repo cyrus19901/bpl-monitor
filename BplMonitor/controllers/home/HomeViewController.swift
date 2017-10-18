@@ -94,7 +94,7 @@ class HomeViewController: UIViewController {
 
     private func loadAccount() -> Void {
         if (self.account.address.length > 0) {
-//            self.totalBalanceLabel.text = String(Utils.convertToBplBase(value: Int64(self.account.balance)!))
+            self.totalBalanceLabel.text = String((Double(self.account.balance)! * pow(10,-8)))
             self.balance = Double(self.account.balance)!
             self.calculateEquivalentInBitcoinUSDandEUR()
         }
@@ -119,8 +119,9 @@ class HomeViewController: UIViewController {
     
     private func loadForging() -> Void {
         self.feesLabel.text =  String(Utils.convertToBplBase(value: Int64(self.forging.fees)!))
-        self.rewardsLabel.text =  String(self.forging.rewards)
-        self.forgedLabel.text =  String(self.forging.forged)
+//        String(Double(data.balance)! * pow(10, -8))
+        self.rewardsLabel.text =  String(Double(self.forging.rewards)! * pow(10,-8))
+        self.forgedLabel.text =  String(Double(self.forging.forged)! * pow(10,-8))
     }
     
     private func loadStatus() -> Void {

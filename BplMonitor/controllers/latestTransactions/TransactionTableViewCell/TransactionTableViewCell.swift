@@ -28,7 +28,7 @@ class TransactionTableViewCell: BaseTableViewCell {
             timeLabel.text = Utils.getTimeAgo(timestamp: Double(data.timestamp))
             fromLabel.text = data.senderId
             toLabel.text = data.recipientId
-            ammountLabel.text = String(Utils.convertToBplBase(value: data.amount))
+            ammountLabel.text = String(Utils.convertToBplBase(value: Int64(data.amount)))
             feeLabel.text = String(Utils.convertToBplBase(value: Int64(data.fee)))
             confirmationsLabel.text = String(data.confirmations)
         }

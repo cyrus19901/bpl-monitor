@@ -9,15 +9,15 @@ enum Server: Int {
     
     var description: String {
         switch self {
-        case .bplNet1 : return "node1.arknet.cloud"
+        case .bplNet1 : return "13.56.163.57"
         case .bplNet2 :  return "54.183.132.15"
         case .custom : return "Add one"
         }
     }
     var apiUrl: String {
         switch self {
-        case .bplNet1: return "http://13.56.163.57:4001/api/"
-        case .bplNet2: return "http://54.183.132.15:4001/api/"
+        case .bplNet1: return "http://13.56.163.57:9030/api/"
+        case .bplNet2: return "http://54.183.132.15:9030/api/"
         case .custom : return ""
         }
     }

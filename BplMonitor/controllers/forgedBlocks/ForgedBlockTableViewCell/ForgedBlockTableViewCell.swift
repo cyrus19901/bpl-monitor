@@ -17,8 +17,8 @@ class ForgedBlockTableViewCell: BaseTableViewCell {
         if let data = data as? Block {
             self.heightLabel.text = String(data.height)
             self.timeLabel.text = Utils.getTimeAgo(timestamp: Double(data.timestamp))
-            self.feeLabel.text = String(Utils.convertToBplBase(value: Int64(data.totalFee)))
-            self.rewardLabel.text = String(data.reward)
+            self.feeLabel.text = String(Double(data.totalFee) * pow(10,-8))
+            self.rewardLabel.text = String(Double(data.reward)! * pow(10, -8))
         }
     }
     
